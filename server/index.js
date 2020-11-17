@@ -16,6 +16,8 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+require("./routes/application.routes.js")(app);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);

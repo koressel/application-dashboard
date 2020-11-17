@@ -3,7 +3,7 @@ const sql = require("./db.js");
 // constructor
 const Application = function(application) {
   this.tile = application.title,
-  this.company = application.company,
+  this.company = application.company
 };
 
 // Applicatoion.create = (newApplication, result) => {
@@ -106,4 +106,4 @@ Application.getAll = result => {
 //   });
 // };
 
-module.exports = Customer;
+module.exports = Application;
