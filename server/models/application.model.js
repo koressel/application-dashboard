@@ -39,7 +39,7 @@ const Application = function(application) {
 // };
 
 Application.getAll = result => {
-  sql.query("SELECT * FROM customers", (err, res) => {
+  sql.query("SELECT * FROM application", (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);

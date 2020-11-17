@@ -6,10 +6,19 @@ export default class App extends React.Component {
     users: [],
   };
 
+  componentDidMount() {
+    fetch('/application')
+      .then(response => {
+        console.log(response)
+        response.json();
+      })
+      .then(data => console.log(data));
+  }
+ 
   render() {
     return (
       <div>
-        <h1>Here dis.</h1>
+        <h1>.</h1>
       </div>
     );
   }
