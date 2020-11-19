@@ -19,6 +19,7 @@ export default class App extends React.Component {
     return (
       <div>
         <form></form>
+        <content></content>
       </div>
     );
   }
