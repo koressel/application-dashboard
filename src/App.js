@@ -18,7 +18,9 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <form></form>
+        <form>
+          
+        </form>
         <content>
           <div>
             <h1>Title</h1>
