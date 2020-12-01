@@ -5,7 +5,10 @@ module.exports = app => {
     // app.post("/customers", customers.create);
   
     // Retrieve all Customers
-    app.get("/applications", applications.findAll);
+    // app.get("/applications", applications.findAll);
+    app.get("/applications", (req,res) => {
+      res.json({info: 'This is some info'});
+    });
   
     // // Retrieve a single Customer with customerId
     // app.get("/customers/:customerId", customers.findOne);
