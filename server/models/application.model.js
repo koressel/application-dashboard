@@ -1,4 +1,4 @@
-const sql = require("./db.js");
+const pg = require("pg");
 
 // constructor
 const Application = function(application) {

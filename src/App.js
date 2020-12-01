@@ -9,9 +9,8 @@ export default class App extends React.Component {
   componentDidMount() {
     fetch('/applications')
       .then(response => {
-        response.json();
+        console.log(response);
       })
-      .then(data => console.log(data));
   }
  
   render() {

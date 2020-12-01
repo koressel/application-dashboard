@@ -6,9 +6,7 @@ module.exports = app => {
   
     // Retrieve all Customers
     // app.get("/applications", applications.findAll);
-    app.get("/applications", (req,res) => {
-      res.json({info: 'This is some info'});
-    });
+    app.get("/applications", applications.getAll);
   
     // // Retrieve a single Customer with customerId
     // app.get("/customers/:customerId", customers.findOne);
