@@ -1,42 +1,10 @@
-const pg = require("pg");
+const { Pool, Client} = require("pg");
 
 // constructor
 const Application = function(application) {
   this.tile = application.title,
   this.company = application.company
 };
-
-// Applicatoion.create = (newApplication, result) => {
-//   sql.query("INSERT INTO customers SET ?", newCustomer, (err, res) => {
-//     if (err) {
-//       console.log("error: ", err);
-//       result(err, null);
-//       return;
-//     }
-
-//     console.log("created customer: ", { id: res.insertId, ...newCustomer });
-//     result(null, { id: res.insertId, ...newCustomer });
-//   });
-// };
-
-// Customer.findById = (customerId, result) => {
-//   sql.query(`SELECT * FROM customers WHERE id = ${customerId}`, (err, res) => {
-//     if (err) {
-//       console.log("error: ", err);
-//       result(err, null);
-//       return;
-//     }
-
-//     if (res.length) {
-//       console.log("found customer: ", res[0]);
-//       result(null, res[0]);
-//       return;
-//     }
-
-//     // not found Customer with the id
-//     result({ kind: "not_found" }, null);
-//   });
-// };
 
 Application.getAll = result => {
   sql.query("SELECT * FROM application", (err, res) => {
