@@ -1,10 +1,12 @@
 const { Pool, Client} = require("pg");
 
-// constructor
-const Application = function(application) {
-  this.tile = application.title,
-  this.company = application.company
-};
+const pool = new Pool({
+  user: 'lorkor',
+  host: 'localhost',
+  database: 'applicationDashboard',
+  password: '',
+  port: 5432,
+});
 
 Application.getAll = result => {
   sql.query("SELECT * FROM application", (err, res) => {
