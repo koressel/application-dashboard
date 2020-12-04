@@ -1,6 +1,5 @@
 const Application = require("../models/application.model.js");
 
-// Retrieve all Customers from the database.
 exports.getAll = (req, res) => {
   Application.getAll((err, data) => {
     if (err)
@@ -9,7 +8,7 @@ exports.getAll = (req, res) => {
           err.message || "Some error occurred while retrieving customers."
       });
     else {
-      res.send(data)
+      res.send(data);
     }
   });
 };
