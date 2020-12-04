@@ -3,14 +3,32 @@ import "./styles.css";
 
 export default class App extends React.Component {
   state = {
-    users: [],
+    applications: [],
   };
 
   componentDidMount() {
     fetch('/applications')
-      .then(response => {
-        console.log(response);
-      })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      let applicationElements = data.map(app => {
+        return (
+          <div>
+            <h1>{app.position}</h1>
+            <h2>{app.company}</h2>
+            <p>Date Applied</p>
+            <input type="checkbox"></input>
+            <input type="checkbox"></input>
+            <input type="checkbox"></input>
+            <p>Job Posting Url</p>
+            <p>Application Status Url</p>
+            <p>Notes</p>
+            <p>Resume/CV</p>
+          </div>
+        )
+      });
+      this.setState({applications: applicationElements});
+    });
   }
  
   render() {
@@ -71,18 +89,7 @@ export default class App extends React.Component {
           </p>
         </form>
         <content>
-          <div>
-            <h1>Title</h1>
-            <h2>Company</h2>
-            <p>Date Applied</p>
-            <input type="checkbox"></input>
-            <input type="checkbox"></input>
-            <input type="checkbox"></input>
-            <p>Job Posting Url</p>
-            <p>Application Status Url</p>
-            <p>Notes</p>
-            <p>Resume/CV</p>
-          </div>
+         {this.state.applications}
         </content>
       </div>
     );

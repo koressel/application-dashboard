@@ -8,7 +8,7 @@ exports.getAll = (req, res) => {
           err.message || "Some error occurred while retrieving customers."
       });
     else {
-      res.send(data);
+      res.json(data);
     }
   });
 };
