@@ -17,9 +17,9 @@ export default class App extends React.Component {
             <h1>{app.position}</h1>
             <h2>{app.company}</h2>
             <p>Date Applied</p>
-            <input type="checkbox"></input>
-            <input type="checkbox"></input>
-            <input type="checkbox"></input>
+            <label><input type="checkbox"></input>&nbsp;Response</label>
+            <label><input type="checkbox"></input>&nbsp;Interview</label>
+            <label><input type="checkbox"></input>&nbsp;Offer</label>
             <p>Job Posting Url</p>
             <p>Application Status Url</p>
             <p>Notes</p>
