@@ -34,30 +34,7 @@ Application.getAll = result => {
         console.log(err.stack);
         result(err, res);
       })
-  })
-
-  // pool
-  //   .connect()
-  //   .then(client => {
-  //       return client
-  //       .query('$1', [1])
-  //       .then(res => {
-  //         client.release();
-  //         console.log(res.rows[0]);
-  //       })
-  //       .catch(err => {
-  //         client.release();
-  //         console.log(err.stack);
-  //       })
-  //   })
-  // pool.query('SELECT * FROM applications', (err, res) => {
-  //   if (err) {
-  //     console.log(err);
-  //     result(err);
-  //   }
-  //   result(null, res)
-  //   pool.end()
-  // })
+  });
 };
 
 module.exports = Application;
