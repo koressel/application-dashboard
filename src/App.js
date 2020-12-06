@@ -17,9 +17,9 @@ export default class App extends React.Component {
             <h1>{app.position}</h1>
             <h2>{app.company}</h2>
             <p>{app.date}</p>
-            <label><input type="checkbox"></input>&nbsp;Response</label>
-            <label><input type="checkbox"></input>&nbsp;Interview</label>
-            <label><input type="checkbox"></input>&nbsp;Offer</label>
+            <label><input type="checkbox" checked={!!app.response}></input>&nbsp;Response</label>
+            <label><input type="checkbox" checked={!!app.interview}></input>&nbsp;Interview</label>
+            <label><input type="checkbox" checked={!!app.offer}></input>&nbsp;Offer</label>
             <p>{app.notes}</p>
           </div>
         )
