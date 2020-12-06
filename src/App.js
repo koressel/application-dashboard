@@ -14,8 +14,8 @@ export default class App extends React.Component {
       let applicationElements = data.map(app => {
         return (
           <div>
-            <h1>{app.position}</h1>
-            <h2>{app.company}</h2>
+            <h2>{app.position}</h2>
+            <h3>{app.company}</h3>
             <p>{app.date}</p>
             <label><input type="checkbox" checked={!!app.response}></input>&nbsp;Response</label>
             <label><input type="checkbox" checked={!!app.interview}></input>&nbsp;Interview</label>
@@ -30,7 +30,7 @@ export default class App extends React.Component {
  
   render() {
     return (
-      <div>
+      <div id="app">
         <form id="new-application-form">
           <h1>Add New</h1>
           <p>
@@ -46,13 +46,14 @@ export default class App extends React.Component {
               <input name="date" type="date"/>
           </p>
           <label for="notes">Notes</label><br/>
-          <textarea name="notes" rows="10"></textarea>
+          <textarea name="notes" rows="10" cols="40"></textarea>
           <p>
               <button type="submit">Save</button>
               <button type="reset">Clear</button>
           </p>
         </form>
-        <content>
+        <content id="applications">
+          <h1>Applications</h1>
          {this.state.applications}
         </content>
       </div>
