@@ -16,14 +16,11 @@ export default class App extends React.Component {
           <div>
             <h1>{app.position}</h1>
             <h2>{app.company}</h2>
-            <p>Date Applied</p>
+            <p>{app.date}</p>
             <label><input type="checkbox"></input>&nbsp;Response</label>
             <label><input type="checkbox"></input>&nbsp;Interview</label>
             <label><input type="checkbox"></input>&nbsp;Offer</label>
-            <p>Job Posting Url</p>
-            <p>Application Status Url</p>
-            <p>Notes</p>
-            <p>Resume/CV</p>
+            <p>{app.notes}</p>
           </div>
         )
       });
