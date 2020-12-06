@@ -32,7 +32,7 @@ export default class App extends React.Component {
     return (
       <div>
         <form id="new-application-form">
-          <h1>Add new application</h1>
+          <h1>Add New</h1>
           <p>
               <label for="company">Company</label><br/>
               <input name="company" type="text"/>

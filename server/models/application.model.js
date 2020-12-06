@@ -27,7 +27,6 @@ Application.getAll = result => {
       .then(res => {
         client.release();
         result(null, res.rows);
-        console.log(res.rows);
       })
       .catch(err => {
         client.release();
