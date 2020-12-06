@@ -33,6 +33,7 @@ export default class App extends React.Component {
       <div id="app">
         <form id="new-application-form">
           <h1>Add New</h1>
+          <hr/>
           <p>
               <label for="company">Company</label><br/>
               <input name="company" type="text"/>
@@ -54,6 +55,7 @@ export default class App extends React.Component {
         </form>
         <content id="applications">
           <h1>Applications</h1>
+          <hr/>
          {this.state.applications}
         </content>
       </div>
