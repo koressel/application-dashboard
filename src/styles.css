@@ -11,10 +11,18 @@ h3 {font-size: 16pt;}
 label {font-size: 12pt;}
 hr {border-color: rgb(156, 156, 156);}
 
+/* Fonts */
+@font-face {
+    font-family: Roboto;
+    src: url(./fonts/Roboto-Regular.ttf);
+}
+
 /*-------------*/
 /* === App === */
 /*-------------*/
-
+#app {
+    font-family: Roboto;
+}
 
 /*------------------------------*/
 /* === New Application Form === */
