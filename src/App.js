@@ -13,7 +13,7 @@ export default class App extends React.Component {
       console.log(data)
       let applicationElements = data.map(app => {
         return (
-          <div>
+          <div className="card">
             <h2>{app.position}</h2>
             <h3>{app.company}</h3>
             <p>{app.date}</p>
