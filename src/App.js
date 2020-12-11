@@ -6,7 +6,7 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      applications: [],
+      applications: []
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,7 +17,6 @@ export default class App extends React.Component {
     fetch('/applications')
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       let applicationElements = data.map(app => {
         return (
           <div className="card">
@@ -32,16 +31,35 @@ export default class App extends React.Component {
         )
       });
       this.setState({applications: applicationElements});
+      console.log(this.state.applications)
     });
   }
 
   handleSubmit(event) {
     event.preventDefault();
-
     const newApplicationForm = document.getElementById('new-application-form');
     const formData = parseFormData(newApplicationForm);
+    const applicationElements = this.state.applications;
+
     postData('/new-application', formData)
-      .then(response => {console.log(response)});
+      .then(response => {
+        if(response.status == 200) {
+          applicationElements.push(
+            <div className="card">
+              <h2>{formData.position}</h2>
+              <h3>{formData.company}</h3>
+              <p>{formData.date}</p>
+              <label><input type="checkbox"></input>&nbsp;Response</label>
+              <label><input type="checkbox"></input>&nbsp;Interview</label>
+              <label><input type="checkbox"></input>&nbsp;Offer</label>
+              <p>{formData.notes}</p>
+            </div>);
+            
+            this.setState({applications: applicationElements});
+        } else {
+          console.log(response);
+        }
+      });
 
     function parseFormData(form) {
       const data = {};

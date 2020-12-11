@@ -36,4 +36,22 @@ Application.getAll = result => {
   });
 };
 
+Application.createNew = result => {
+  pool
+  .connect()
+  .then(client => {
+      return client
+      .query('INSERT INTO applications()')
+      .then(res => {
+        client.release();
+        result(null, res.rows);
+      })
+      .catch(err => {
+        client.release();
+        console.log(err.stack);
+        result(err, res);
+      })
+  });
+}
+
 module.exports = Application;
