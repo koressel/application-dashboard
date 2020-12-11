@@ -2,9 +2,16 @@ import React from "react";
 import "./styles.css";
 
 export default class App extends React.Component {
-  state = {
-    applications: [],
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      applications: [],
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
 
   componentDidMount() {
     fetch('/applications')
@@ -27,6 +34,42 @@ export default class App extends React.Component {
       this.setState({applications: applicationElements});
     });
   }
+
+  handleSubmit(event) {
+    event.preventDefault();
+
+    const newApplicationForm = document.getElementById('new-application-form');
+    const formData = parseFormData(newApplicationForm);
+    postData('/new-application', formData)
+      .then(response => {console.log(response)});
+
+    function parseFormData(form) {
+      const data = {};
+      for (let i=0;i<form.elements.length-2;i++) {
+        const e = form.elements[i];
+        const inputName = e.getAttribute('name');
+        data[inputName] = e.value;
+      }
+      return data;
+    }
+
+    async function postData(url, data) {
+      const request = { 
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    }
+      const response = await fetch(url, request)
+      return response;
+    }
+  }
  
   render() {
     return (
@@ -36,20 +79,22 @@ export default class App extends React.Component {
           <hr/>
           <p>
               <label for="company">Company</label><br/>
-              <input name="company" type="text"/>
+              <input name="company" type="text" value="Alltel"/>
           </p>
           <p>
               <label for="position">Position</label><br/>
-              <input name="position" type="text"/>
+              <input name="position" type="text" value="Developer"/>
           </p>
           <p>
               <label for="date">Date</label><br/>
-              <input name="date" type="date"/>
+              <input name="date" type="date" value="2018-07-13"/>
           </p>
           <label for="notes">Notes</label><br/>
-          <textarea name="notes" rows="10" cols="40"></textarea>
+          <textarea name="notes" rows="10" cols="40">
+            This is a test.
+          </textarea>
           <p>
-              <button type="submit">Save</button>
+              <button type="submit" onClick={this.handleSubmit}>Save</button>
               <button type="reset">Clear</button>
           </p>
         </form>

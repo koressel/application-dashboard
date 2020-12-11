@@ -2,4 +2,9 @@ module.exports = app => {
     const applications = require("../controllers/application.controller.js");
   
     app.get("/applications", applications.getAll);
+
+    app.post("/new-application", (req, res) => {
+      console.log(req.body);
+      res.sendStatus(200);
+    });
   };
