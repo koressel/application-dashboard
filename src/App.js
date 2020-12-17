@@ -37,14 +37,14 @@ export default class App extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+
     const newApplicationForm = document.getElementById('new-application-form');
     const formData = parseFormData(newApplicationForm);
     const applicationElements = this.state.applications;
 
     postData('/new-application', formData)
       .then(response => {
-        if(response.status == 200) {
-          applicationElements.push(
+        if(response.status == 200) { applicationElements.push(
             <div className="card">
               <h2>{formData.position}</h2>
               <h3>{formData.company}</h3>
@@ -55,7 +55,7 @@ export default class App extends React.Component {
               <p>{formData.notes}</p>
             </div>);
             
-            this.setState({applications: applicationElements});
+          this.setState({applications: applicationElements});
         } else {
           console.log(response);
         }
@@ -63,11 +63,13 @@ export default class App extends React.Component {
 
     function parseFormData(form) {
       const data = {};
+
       for (let i=0;i<form.elements.length-2;i++) {
         const e = form.elements[i];
         const inputName = e.getAttribute('name');
         data[inputName] = e.value;
       }
+
       return data;
     }
 
