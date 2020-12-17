@@ -30,8 +30,8 @@ export default class App extends React.Component {
           </div>
         )
       });
+
       this.setState({applications: applicationElements});
-      console.log(this.state.applications)
     });
   }
 
@@ -54,7 +54,7 @@ export default class App extends React.Component {
               <label><input type="checkbox"></input>&nbsp;Offer</label>
               <p>{formData.notes}</p>
             </div>);
-            
+
           this.setState({applications: applicationElements});
         } else {
           console.log(response);
@@ -85,10 +85,12 @@ export default class App extends React.Component {
         redirect: 'follow',
         referrerPolicy: 'no-referrer',
         body: JSON.stringify(data)
-    }
+      }
+      
       const response = await fetch(url, request)
       return response;
     }
+
   }
  
   render() {
