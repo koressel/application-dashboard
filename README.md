@@ -1,44 +1,74 @@
-### `npm start`
+# Application Dashboard
+> A movie library built with React.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Movie8r is a music library application with over 700,000 movies and TV shows.
 
-### `npm test`
+![](header.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+Clone or download the project then run the following commands in the root directory.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm install
+npm start
+```
+> Note that the default start property runs "npm build" before serving the app. If you wish to change this, edit the package.json file.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage example
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
 
-### `npm run eject`
+_For more examples and usage, please refer to the [Wiki][wiki]._
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Development setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Describe how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+make install
+npm test
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Release History
 
-### Analyzing the Bundle Size
+* 0.2.1
+    * CHANGE: Update docs (module code remains unchanged)
+* 0.2.0
+    * CHANGE: Remove `setDefaultXYZ()`
+    * ADD: Add `init()`
+* 0.1.1
+    * FIX: Crash when calling `baz()` (Thanks @GenerousContributorName!)
+* 0.1.0
+    * The first proper release
+    * CHANGE: Rename `foo()` to `bar()`
+* 0.0.1
+    * Work in progress
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Meta
 
-### Advanced Configuration
+Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Distributed under the XYZ license. See ``LICENSE`` for more information.
 
-### Deployment
+[https://github.com/yourname/github-link](https://github.com/dbader/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contributing
+
+1. Fork it (<https://github.com/yourname/yourproject/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/koressel/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/koressel/node-datadog-metrics
+[wiki]: https://github.com/yourname/yourproject/wiki
