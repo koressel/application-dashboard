@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import Applications from './components/applications';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -44,7 +45,9 @@ export default class App extends React.Component {
 
     postData('/new-application', formData)
       .then(response => {
-        if(response.status == 200) { applicationElements.push(
+        if(response.status == 200) { 
+          console.log('success')
+          applicationElements.push(
             <div className="card">
               <h2>{formData.position}</h2>
               <h3>{formData.company}</h3>
@@ -120,11 +123,7 @@ export default class App extends React.Component {
               <button type="reset">Clear</button>
           </p>
         </form>
-        <content id="applications">
-          <h1>Applications</h1>
-          <hr/>
-         {this.state.applications}
-        </content>
+        <Applications applications={this.state.applications}/>
       </div>
     );
   }
