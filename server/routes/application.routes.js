@@ -3,8 +3,11 @@ module.exports = app => {
   
     app.get("/applications", applications.getAll);
 
-    app.post("/new-application", (req, res) => {
-      console.log(req.body);
-      res.sendStatus(200);
-    });
+    app.post("/new-application", applications.create);
+
+    // app.post("/new-application", (req, res) => {
+    //   let applicationData = req.body;
+    //   applications.addNew(applicationData);
+    //   res.sendStatus(200);
+    // });
   };

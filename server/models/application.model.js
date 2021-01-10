@@ -36,22 +36,24 @@ Application.getAll = result => {
   });
 };
 
-Application.createNew = result => {
-  pool
-  .connect()
-  .then(client => {
-      return client
-      .query('INSERT INTO applications()')
-      .then(res => {
-        client.release();
-        result(null, res.rows);
-      })
-      .catch(err => {
-        client.release();
-        console.log(err.stack);
-        result(err, res);
-      })
-  });
+Application.addNew = (data, result) => {
+  console.log('From model:')
+  console.log(data)
+  // pool
+  // .connect()
+  // .then(client => {
+  //   const sql = "INSERT INTO applications(position,company,date,notes,response,interview,offer) VALUES('Test','Test','2021-09-09','No Notes',true,false,false);";
+  //   return client.query(sql)
+  //   .then(res => {
+  //     client.release();
+  //     result(null, res.rows);
+  //   })
+  //   .catch(err => {
+  //     client.release();
+  //     console.log(err.stack);
+  //     result(err, res);
+  //   })
+  // });
 }
 
 module.exports = Application;
